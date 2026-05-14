@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Workflow</title>
+    <meta
+      name="description"
+      content="A simple short-form content workflow app for generating bodybuilding video ideas and expanding them into full video packages."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="App header">
+        <div>
+          <p class="eyebrow">Content Generation System</p>
+          <h1>Short-Form Content Workflow</h1>
+        </div>
+        <button class="ghost-button" id="reset-button" type="button">Reset</button>
+      </section>
+
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <h2>Generate the weekly board. Pick a hook. Expand the full video package.</h2>
+          <p>
+            Built for a natural bodybuilding creator using transformation proof, prep updates,
+            tactical education, and responsible optimization content.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="primary-button" id="generate-button" type="button">Generate 24 Ideas</button>
+          <span id="generation-status">Waiting to generate</span>
+        </div>
+      </section>
+
+      <section class="brief-panel" aria-label="Current trend brief">
+        <div class="brief-head">
+          <p class="eyebrow">Trend Brief</p>
+          <h2 id="brief-title">Ready when you are.</h2>
+          <p id="brief-copy">
+            This static prototype loads a complete sample workflow. A backend can later connect this
+            button to live research and the Codex skill.
+          </p>
+        </div>
+        <div class="brief-grid">
+          <article>
+            <span>Platform</span>
+            <strong>TikTok for comments. Reels for proof. Shorts for search.</strong>
+          </article>
+          <article>
+            <span>Formats</span>
+            <strong>Transformation, FDOE, hot take, prep diary.</strong>
+          </article>
+          <article>
+            <span>Angle</span>
+            <strong>Former invisible 250 lb guy enters natural prep with receipts.</strong>
+          </article>
+        </div>
+        <div class="tag-bank" id="tag-bank"></div>
+      </section>
+
+      <section class="workspace" id="workspace" hidden>
+        <aside class="ideas-panel" aria-label="Generated ideas">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Generated Ideas</p>
+              <h2><span id="idea-count">0</span> Hooks</h2>
+            </div>
+            <select id="format-filter" aria-label="Filter by format">
+              <option value="all">All formats</option>
+              <option value="Transformation reveal">Transformation</option>
+              <option value="Full day of eating / FDOE">FDOE</option>
+              <option value="Talking head hot take">Hot take</option>
+              <option value="Peptide vs basics">Peptides</option>
+            </select>
+          </div>
+          <div class="idea-list" id="idea-list"></div>
+        </aside>
+
+        <section class="package-panel" aria-label="Expanded video package">
+          <div id="package-empty" class="package-empty">
+            <p class="eyebrow">Deep Dive</p>
+            <h2>Select an idea to expand it.</h2>
+            <p>The full package appears here: hook, script, shot list, edit notes, caption, pinned comment, and replies.</p>
+          </div>
+          <div id="package-content" hidden></div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
